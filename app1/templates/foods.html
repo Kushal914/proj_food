@@ -7,7 +7,7 @@ Food Menu
 {% block content %}
 <h1 class = "text-center mt-4">Food Menu</h1>
 <div class="container row gap-3">
-  {% for food in foods %}
+  {% for food in food_items %}
   <div class="card" style="width: 18rem;">
     <img src="{{food.photo.url}}" class="card-img-top" alt="...">
     <div class="card-body">
@@ -17,6 +17,6 @@ Food Menu
       <a href="#" class="btn btn-primary">Add to Cart</a>
     </div>
   </div>
-    {% endfor %}
+  {% endfor %}
 </div>
 {% endblock %}

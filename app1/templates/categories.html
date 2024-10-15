@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Categories
+{% endblock %}
+
+{% block content %}
+<h1 class = "text-center mt-4">Categories</h1>
+<div class="container row gap-3">
+    {% for category in category_items %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{category.photo.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{category.title}}</h5>
+        <a href="{% url 'category_foods' category.id %}" class="btn btn-primary">Food Items</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -5,4 +5,56 @@ Home
 {% endblock %}
 
 {% block content %}
+<!-- Categories Section Starts Here -->
+<section class="categories">
+    <div class="container">
+        <h2 class="text-center">Explore Various Food Categories</h2>
+        
+        <div class="container row gap-3">
+            {% for category in category_items %}
+            <div class="card" style="width: 18rem;">
+              <img src="{{category.photo.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{category.title}}</h5>
+                <a href="#" class="btn btn-primary">Food Items</a>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</section>
+<!-- Categories Section Ends Here -->
+
+
+<!-- Food Menu Section Starts Here -->
+<section class="food-menu">
+    <div class="container">
+        <h2 class="text-center">Our Food Menu</h2>
+
+        <div class="container row gap-3">
+            {% for food in food_items %}
+            <div class="card" style="width: 18rem;">
+              <img src="{{food.photo.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{food.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{food.price}}</h6>
+                <p class="card-text">{{food.description}}</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+    <p class="text-center">
+        <a href="http://localhost:8000/app/foods/">See All Foods</a>
+    </p>
+</section>
+<!-- Food Menu Section Ends Here -->
+
 {% endblock %}
