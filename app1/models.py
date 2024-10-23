@@ -24,3 +24,18 @@ class Food(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+    
+class Cart(models.Model):
+    PAY_MODE_CHOICES = [
+        ('CoD', 'Cash on Delivery'),
+    ]
+
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    pay_mode = models.CharField(max_length=15, choices=PAY_MODE_CHOICES, default='CoD')
+    status = models.CharField(max_length=31, default='ordered')
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, on_delete = models.CASCADE)
+    food = models.ForeignKey(Food, on_delete = models.CASCADE)
+    qty = models.IntegerField(default=0)

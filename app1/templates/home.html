@@ -16,7 +16,7 @@ Home
               <img src="{{category.photo.url}}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{category.title}}</h5>
-                <a href="#" class="btn btn-primary">Food Items</a>
+                <a href="{% url 'category_foods' category.id %}" class="btn btn-primary">Food Items</a>
               </div>
             </div>
             {% endfor %}
